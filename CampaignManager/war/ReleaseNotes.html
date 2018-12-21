@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Campaign Manager - Release Notes</title>
+	<script type="text/javascript" src="/files/javascript.js"></script>
+	<link type="text/css" rel="stylesheet" href="/files/stylesheet.css" />
+</head>
+<body>
+<pre>
+Release steps:
+==============
+
+application identifier @ /war/WEB-INF/appengine-web.xml
+/src/me.heuristic.references/GoogleCheckout.java
+/src/me.heuristic.services/AccountService.java
+/src/me.heuristic.servlets/CheckoutNotificationsServlet.java
+
+DONE Features:
+==============
+Layout and navigation
+
+create account
+list my accounts (filtered by current user)
+
+view/edit account name and tagging settings
+delete account
+
+list account users
+manage (add/edit/delete) account users
+
+list campaigns
+manage (add/edit/delete) campaigns
+
+list tagged URLs
+manage (add/edit/delete) tagged URLs
+
+server side form validation (required fields + email pattern)
+handling non existing accounts/users/campaigns/tagged URL
+
+tagging settings
+creating complete tagged url (serverside)
+deletion confirmation
+createdBy, createdAt, in addition to modifiedBy and modifiedAt
+creating complete tagged url based on tagging settings and utms
+
+role based security checks (preventing users from doing action they don't have permission to)
+role based functionality display (hiding link according to users' permissions)
+editable lists for account user and campaign tagged urls
+
+prevent admins from adding redundant users
+validate urls and emails against regular expression
+
+account type
+restricting number of users/ campaigns/ functionality based on account type
+View Account Details
+
+changed flow: after creating, or editing, a campaign, user is taken to ManageTaggedURL screen
+export campaigns (with delimiters)
+export as CSV for excel
+import campaigns
+account channels/ campaign medium
+client side (JavaScript) form validation
+show/hide other medium field
+
+NEW on 2/20:
+============
+several bug fixes
+enforced rule: each account must have at least 1 admin
+removed ViewTaggedUrl page
+
+NEW in March:
+=============
+place an order, using Google Checkout
+creating account using placed orders
+canceling orders and reflecting that on related account(changing expiration date)
+adding expiration verification to (almost) all pages
+separating EditAccount and NewAccount pages
+
+NEW in April
+=============
+Upgrade/down-grade
+creating short URL
+Design integration
+some flow changes and design integration
+
+April 23
+=========
+minor design changes
+
+</pre>
+</body>
+</html>

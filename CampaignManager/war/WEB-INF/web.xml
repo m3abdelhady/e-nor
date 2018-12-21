@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+  <!-- <security-constraint>
+        <web-resource-collection>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint> -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Payment</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+	
+     <servlet>
+        <servlet-name>SecurityCheck</servlet-name>
+        <servlet-class>me.heuristic.servlets.SecurityCheck</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SecurityCheck</servlet-name>
+        <url-pattern>/SecurityCheck</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SecurityCheck_CreateAccount</servlet-name>
+        <servlet-class>me.heuristic.servlets.SecurityCheck_CreateAccount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SecurityCheck_CreateAccount</servlet-name>
+        <url-pattern>/SC_CreateAccount</url-pattern>        
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SendEmail</servlet-name>
+        <servlet-class>me.heuristic.servlets.SendEmailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SendEmail</servlet-name>
+        <url-pattern>/sendemail</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditAccount</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditAccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditAccount</servlet-name>
+        <url-pattern>/editaccount</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditAccountPlan</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditAccountPlanServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditAccountPlan</servlet-name>
+        <url-pattern>/editaccountplan</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditAUser</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditAUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditAUser</servlet-name>
+        <url-pattern>/editauser</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditChannel</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditChannelServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditChannel</servlet-name>
+        <url-pattern>/editchannel</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditTaggingParameters</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditTaggingParametersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditTaggingParameters</servlet-name>
+        <url-pattern>/edittaggingparameters</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditTaggingSettings</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditTaggingSettingsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditTaggingSettings</servlet-name>
+        <url-pattern>/edittaggingsettings</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>EditCampaignHolder</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditCampaignHolderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditCampaignHolder</servlet-name>
+        <url-pattern>/editcampaignholder</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditCampaign</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditCampaignServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditCampaign</servlet-name>
+        <url-pattern>/editcampaign</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditMobileCampaign</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditMobileCampaignServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditMobileCampaign</servlet-name>
+        <url-pattern>/editmobilecampaign </url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>EditMobileCampaignHolder</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditMobileCampaignHolderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditMobileCampaignHolder</servlet-name>
+        <url-pattern>/editmobilecampaignholder </url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditTaggedUrl</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditTaggedUrlServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditTaggedUrl</servlet-name>
+        <url-pattern>/edittaggedurl</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditMobileTaggedUrl</servlet-name>
+        <servlet-class>me.heuristic.servlets.EditMobileTaggedUrlServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditMobileTaggedUrl</servlet-name>
+        <url-pattern>/editmobiletaggedurl</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ExportCampaigns</servlet-name>
+        <servlet-class>me.heuristic.servlets.ExportCampaignsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExportCampaigns</servlet-name>
+        <url-pattern>/exportcampaigns</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ExportCampaignsMS</servlet-name>
+        <servlet-class>me.heuristic.servlets.ExportCampaignsMSServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExportCampaignsMS</servlet-name>
+        <url-pattern>/exportcampaignsMS</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ImportCampaigns</servlet-name>
+        <servlet-class>me.heuristic.servlets.ImportCampaignsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImportCampaigns</servlet-name>
+        <url-pattern>/importcampaigns</url-pattern>
+    </servlet-mapping>
+    
+ 	<servlet>
+        <servlet-name>BrainTreeServlet</servlet-name>
+        <servlet-class>me.heuristic.servlets.BrainTreeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BrainTreeServlet</servlet-name>
+        <url-pattern>/braintreeservlet</url-pattern>
+    </servlet-mapping>
+    
+	<servlet>
+        <servlet-name>BrainTreeWebHook</servlet-name>
+        <servlet-class>me.heuristic.servlets.BrainTreeWebHook</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BrainTreeWebHook</servlet-name>
+        <url-pattern>/braintreewebhook</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AnalyticsServlet</servlet-name>
+        <servlet-class>me.heuristic.servlets.AnalyticsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AnalyticsServlet</servlet-name>
+        <url-pattern>/AnalyticsServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>AnalyticsCallBackServlet</servlet-name>
+        <servlet-class>me.heuristic.servlets.AnalyticsCallBackServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AnalyticsCallBackServlet</servlet-name>
+        <url-pattern>/AnalyticsCallBack</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AnalyticsInfoHandlerServlet</servlet-name>
+        <servlet-class>me.heuristic.servlets.AnalyticsInfoHandlerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AnalyticsInfoHandlerServlet</servlet-name>
+        <url-pattern>/AnalyticsInfoHandler</url-pattern>
+    </servlet-mapping>
+    
+    
+   
+    
+    <servlet>
+        <servlet-name>doublPostingServlet</servlet-name>
+        <servlet-class>me.heuristic.servlets.doublPostingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>doublPostingServlet</servlet-name>
+        <url-pattern>/doublPosting</url-pattern>
+    </servlet-mapping>
+    
+    
+<context-param>
+    <param-name>org.mortbay.jetty.servlet.SessionURL</param-name>
+    <param-value>none</param-value>
+</context-param>
+	<welcome-file-list>
+		<welcome-file>signin.jsp</welcome-file>
+	</welcome-file-list>
+ 	
+<error-page>
+    
+    <error-code>401</error-code>
+    <location>/signin.jsp</location>
+</error-page>
+<error-page>
+    
+    <error-code>403</error-code>
+    <location>/signin.jsp</location>
+</error-page>
+<error-page>
+    
+    <error-code>404</error-code>
+    <location>/signin.jsp</location>
+</error-page>
+<error-page>
+    
+    <error-code>500</error-code>
+    <location>/signin.jsp</location>
+</error-page>
+<error-page>
+    
+    <error-code>503</error-code>
+    <location>/signin.jsp</location>
+</error-page> 
+</web-app>
